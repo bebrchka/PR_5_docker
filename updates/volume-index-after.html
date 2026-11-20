@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Named volume — обновлённая верстка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <span class="tag">ОБНОВЛЕНО В NAMED VOLUME</span>
+    <h1 id="title">Тёплый вечер</h1>
+    <p id="message">Новый заголовок и изображение уже сохранены в томе Docker.</p>
+    <img class="poster" src="images/poster.svg" alt="Иллюстрация тёплого вечера">
+    <p class="note">Файлы находятся в управляемых Docker томах, а не в каталоге сайта на хосте.</p>
+  </main>
+  <script>
+    fetch("content.json")
+      .then((response) => response.json())
+      .then((data) => {
+        document.querySelector("#title").textContent = data.title;
+        document.querySelector("#message").textContent = data.message;
+      });
+  </script>
+</body>
+</html>

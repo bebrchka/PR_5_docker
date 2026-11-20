@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Named volume — обновление без пересборки</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <span class="tag">ПРАКТИЧЕСКАЯ РАБОТА № 5 · NAMED VOLUME</span>
+    <h1 id="title">Зелёный берег</h1>
+    <p id="message">HTML и изображение хранятся в именованных томах Docker.</p>
+    <img class="poster" src="images/poster.svg" alt="Иллюстрация зелёного берега">
+    <p class="note">Данные не лежат в папке сайта на компьютере и сохраняются после удаления контейнера.</p>
+  </main>
+  <script>
+    fetch("content.json")
+      .then((response) => response.json())
+      .then((data) => {
+        document.querySelector("#title").textContent = data.title;
+        document.querySelector("#message").textContent = data.message;
+      });
+  </script>
+</body>
+</html>

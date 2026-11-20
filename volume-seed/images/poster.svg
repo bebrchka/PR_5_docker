@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#7ed7f5"/><stop offset="1" stop-color="#e8f4ca"/></linearGradient>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#48b7a3"/><stop offset="1" stop-color="#176f79"/></linearGradient>
+  </defs>
+  <rect width="1000" height="520" fill="url(#sky)"/>
+  <circle cx="790" cy="112" r="52" fill="#ffe5a0"/>
+  <path d="M0 300 210 148l200 152 188-172 402 180v100H0Z" fill="#669881"/>
+  <path d="M0 350c200-76 339 35 514-8s300-60 486 12v166H0Z" fill="url(#water)"/>
+  <path d="M0 394c162-44 285 38 448 0s316-49 552 4" fill="none" stroke="#bcead4" stroke-width="9" opacity=".8"/>
+  <path d="M78 520c91-98 229-98 322 0" fill="#7dac69"/>
+  <text x="58" y="86" fill="#17384b" font-family="Arial,sans-serif" font-size="32" font-weight="700">БЕРЕГ · ВЕРСИЯ 1</text>
+</svg>

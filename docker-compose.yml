@@ -1,0 +1,35 @@
+name: pr5-docker
+
+services:
+  volume-init:
+    image: alpine:3.22
+    profiles: ["init"]
+    volumes:
+      - ./volume-seed:/seed:ro
+      - html-data:/html
+      - images-data:/images
+    command:
+      - sh
+      - -c
+      - mkdir -p /html/images /images && cp /seed/index.html /html/index.html && cp /seed/style.css /html/style.css && cp /seed/content.json /html/content.json && cp /seed/images/poster.svg /images/poster.svg
+
+  bind-site:
+    image: nginx:alpine
+    container_name: pr5-bind-site
+    ports:
+      - "18081:80"
+    volumes:
+      - ./bind-data:/usr/share/nginx/html
+
+  volume-site:
+    image: nginx:alpine
+    container_name: pr5-volume-site
+    ports:
+      - "18082:80"
+    volumes:
+      - html-data:/usr/share/nginx/html
+      - images-data:/usr/share/nginx/html/images
+
+volumes:
+  html-data:
+  images-data:
